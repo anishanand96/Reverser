@@ -1,12 +1,14 @@
 package Reverser;
+
 public class StringReverserWithRecursion implements Reverser {
+	public String reverse(String str) {
+		StringBuilder strBuilder = new StringBuilder();
+		char[] strChars = str.toCharArray();
 
-	public String reverse(String stringToBeReversed) {
-
-		if (stringToBeReversed.length() < 2) {
-			return stringToBeReversed;
-		} else {
-			return reverse(stringToBeReversed.substring(1)) + stringToBeReversed.charAt(0);
+		for (int i = strChars.length - 1; i >= 0; i--) {
+			strBuilder.append(strChars[i]);
 		}
+
+		return strBuilder.toString();
 	}
 }
